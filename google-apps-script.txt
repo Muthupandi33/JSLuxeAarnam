@@ -1,0 +1,46 @@
+/**
+ * Google Apps Script to serve product data from a Google Sheet as JSON.
+ * 
+ * 1. Create a Google Sheet with columns:
+ *    Product ID | Product Name | Category | Price | Discount Price | Image URL | Description | Stock Status | WhatsApp Order Message
+ * 
+ * 2. In Google Sheets: Extensions -> Apps Script
+ * 3. Paste this code and click "Deploy" -> "New Deployment"
+ * 4. Choose "Web App", set access to "Anyone"
+ * 5. Copy the Web App URL and set it as VITE_GOOGLE_SHEET_API in your .env file
+ */
+
+function doGet() {
+    const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+    const data = sheet.getDataRange().getValues();
+    const headers = data[0];
+    const rows = data.slice(1);
+
+    const jsonData = rows.map(row => {
+        const obj = {};
+        headers.forEach((header, index) => {
+            // Map sheet headers to JS object keys
+            const key = header.toLowerCase().replace(/ /g, '');
+            let value = row[index];
+
+            // Special mapping for keys
+            const keyMap = {
+                'productid': 'id',
+                'productname': 'name',
+                'category': 'category',
+                'price': 'price',
+                'discountprice': 'discountPrice',
+                'imageurl': 'imageUrl',
+                'description': 'description',
+                'stockstatus': 'stockStatus',
+                'whatsappordermessage': 'whatsappMessage'
+            };
+
+            obj[keyMap[key] || key] = value;
+        });
+        return obj;
+    });
+
+    return ContentService.createTextOutput(JSON.stringify(jsonData))
+        .setMimeType(ContentService.MimeType.JSON);
+}

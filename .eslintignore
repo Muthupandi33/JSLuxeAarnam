@@ -1,0 +1,4 @@
+google-apps-script.js
+dist
+node_modules
+*.config.js
