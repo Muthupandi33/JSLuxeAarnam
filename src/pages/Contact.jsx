@@ -11,7 +11,7 @@ const Contact = () => {
             <div className="container mx-auto px-4 md:px-6 py-16">
                 <div className="text-center mb-20 max-w-2xl mx-auto">
                     <h1 className="text-5xl md:text-6xl font-serif mb-6 text-luxury-charcoal">Get In Touch</h1>
-                    <p className="text-gray-500 text-lg">Have a query or looking for wholesale partnerships? Reach out to us directly or fill the form.</p>
+                    <p className="text-gray-500 text-lg">Have a query or looking for  partnerships? Reach out to us directly or fill the form.</p>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
@@ -65,7 +65,7 @@ const Contact = () => {
                                 </div>
                                 <div className="space-y-2 md:col-span-2">
                                     <label className="text-xs uppercase tracking-widest text-gray-400 font-bold">Subject</label>
-                                    <input type="text" placeholder="Wholesale Inquiry" className="w-full bg-gray-50 border border-gray-200 rounded-xl py-4 px-6 text-luxury-charcoal focus:outline-none focus:border-luxury-pink transition-all" />
+                                    <input type="text" placeholder=" Inquiry" className="w-full bg-gray-50 border border-gray-200 rounded-xl py-4 px-6 text-luxury-charcoal focus:outline-none focus:border-luxury-pink transition-all" />
                                 </div>
                                 <div className="space-y-2 md:col-span-2">
                                     <label className="text-xs uppercase tracking-widest text-gray-400 font-bold">Your Message</label>

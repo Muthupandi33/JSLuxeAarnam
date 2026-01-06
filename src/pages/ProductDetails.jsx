@@ -35,7 +35,7 @@ const ProductDetails = () => {
 *Price:* ₹${product.discountPrice}
 *Description:* ${product.description}
 
-Is this available for wholesale purchase?`
+Is this available for  purchase?`
     )}`;
 
     return (
@@ -121,7 +121,7 @@ Is this available for wholesale purchase?`
                             <div className="flex flex-col gap-3">
                                 <RefreshCcw className="text-luxury-pink" size={24} />
                                 <h4 className="text-luxury-charcoal text-xs uppercase tracking-widest font-bold">Easy Reorder</h4>
-                                <p className="text-gray-400 text-[10px] uppercase">Seamless Wholesale</p>
+                                <p className="text-gray-400 text-[10px] uppercase">Seamless </p>
                             </div>
                         </div>
                     </motion.div>

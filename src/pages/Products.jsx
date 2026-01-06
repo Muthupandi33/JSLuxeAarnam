@@ -34,7 +34,7 @@ const Products = () => {
                 {/* Header Section */}
                 <div className="text-center mb-16">
                     <h1 className="text-4xl md:text-6xl font-serif mb-4 text-luxury-charcoal italic">The Treasury</h1>
-                    <p className="text-gray-500 max-w-xl mx-auto">Explore our curated collections of wholesale jewellery and fashion accessories.</p>
+                    <p className="text-gray-500 max-w-xl mx-auto">Explore our curated collections of  jewellery and fashion accessories.</p>
                 </div>
 
                 {/* Controls */}

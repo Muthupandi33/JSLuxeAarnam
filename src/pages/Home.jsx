@@ -14,7 +14,7 @@ const Home = () => {
 
     const features = [
         { icon: <Star className="text-luxury-pink" />, title: "Premium Quality", desc: "Handpicked artisanal jewellery collections." },
-        { icon: <ShieldCheck className="text-luxury-pink" />, title: "Trusted Source", desc: "Established wholesale heritage since years." },
+        { icon: <ShieldCheck className="text-luxury-pink" />, title: "Trusted Source", desc: "Established  heritage since years." },
         { icon: <Truck className="text-luxury-pink" />, title: "Secure Shipping", desc: "Express delivery with tamper-proof packaging." },
     ];
 
@@ -43,7 +43,7 @@ const Home = () => {
                             Timeless <br /> <span className="gold-gradient">Elegance</span>
                         </h1>
                         <p className="text-gray-600 max-w-2xl mx-auto text-lg md:text-xl mb-10 font-light leading-relaxed">
-                            Discover the finest wholesale jewellery and fashion essentials at JS Luxe Aarnam. Curated for those who appreciate true craftsmanship.
+                            Discover the finest  jewellery and fashion essentials at JS Luxe Aarnam. Curated for those who appreciate true craftsmanship.
                         </p>
                         <div className="flex flex-col md:flex-row items-center justify-center gap-6">
                             <Link
@@ -145,7 +145,7 @@ const Home = () => {
                             <h4 className="text-luxury-pink tracking-[0.2em] uppercase text-xs mb-3 font-bold">Our Vision</h4>
                             <h2 className="text-4xl font-serif text-luxury-charcoal mb-8">Crafting Memories for Generations</h2>
                             <p className="text-gray-500 mb-8 text-lg font-light leading-relaxed">
-                                Founded by G. Seethalakshmi, JS Luxe Aarnam started with a simple vision: to bring curated, high-quality jewellery to businesses and lovers of fashion at wholesale prices.
+                                Founded by G. Seethalakshmi, JS Luxe Aarnam started with a simple vision: to bring curated, high-quality jewellery to businesses and lovers of fashion at  prices.
                             </p>
                             <ul className="space-y-4 mb-10">
                                 <li className="flex items-center gap-3 text-luxury-charcoal">
@@ -154,7 +154,7 @@ const Home = () => {
                                 </li>
                                 <li className="flex items-center gap-3 text-luxury-charcoal">
                                     <div className="w-1.5 h-1.5 bg-luxury-pink rounded-full"></div>
-                                    <span>Quality Assured Wholesale</span>
+                                    <span>Quality Assured </span>
                                 </li>
                                 <li className="flex items-center gap-3 text-luxury-charcoal">
                                     <div className="w-1.5 h-1.5 bg-luxury-pink rounded-full"></div>

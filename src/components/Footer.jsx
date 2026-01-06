@@ -23,7 +23,7 @@ const Footer = () => {
                             <span className="text-xl font-bold font-serif text-luxury-charcoal">JS Luxe Aarnam</span>
                         </Link>
                         <p className="text-gray-500 text-sm leading-relaxed mb-6">
-                            Premium wholesale jewellery and fashion products. Elegance redefined for the modern woman.
+                            Premium  jewellery and fashion products. Elegance redefined for the modern woman.
                         </p>
                         <div className="flex gap-4">
                             {socialLinks.map((social) => (
@@ -77,7 +77,7 @@ const Footer = () => {
                             </li>
                             <li className="flex items-start gap-3 text-gray-500">
                                 <MapPin size={18} className="text-luxury-pink mt-1" />
-                                <span>G. Seethalakshmi,<br />JS Luxe Aarnam - Wholesale Hub</span>
+                                <span>G. Seethalakshmi,<br />JS Luxe Aarnam -  Hub</span>
                             </li>
                         </ul>
                     </div>

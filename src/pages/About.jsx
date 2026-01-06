@@ -57,7 +57,7 @@ const About = () => {
                             <span className="text-luxury-pink tracking-[0.3em] uppercase text-xs font-bold mb-4 block">The Visionary</span>
                             <h2 className="text-4xl font-serif text-luxury-charcoal mb-8">G. Seethalakshmi</h2>
                             <p className="text-gray-500 mb-6 leading-relaxed text-lg">
-                                JS Luxe Aarnam was founded on the principle that luxury should be accessible and eternal. Under the leadership of G. Seethalakshmi, we have grown from a boutique vision into a wholesale hub that serves clients across regions.
+                                JS Luxe Aarnam was founded on the principle that luxury should be accessible and eternal. Under the leadership of G. Seethalakshmi, we have grown from a boutique vision into a  hub that serves clients across regions.
                             </p>
                             <p className="text-gray-600 mb-10 leading-relaxed text-lg italic border-l-2 border-luxury-pink pl-6 bg-white py-6 pr-6 rounded-r-lg shadow-sm">
                                 "Our goal is not just to sell jewellery, but to be a part of the most precious moments in our customers' lives. We believe in building relationships through trust and quality."
@@ -89,7 +89,7 @@ const About = () => {
                         {[
                             { title: "Authenticity", desc: "Every piece is carefully vetted for quality and purity of material." },
                             { title: "Innovation", desc: "Blending traditional Indian designs with contemporary global trends." },
-                            { title: "Commitment", desc: "Dedicated to providing unparalleled service to our wholesale partners." }
+                            { title: "Commitment", desc: "Dedicated to providing unparalleled service to our  partners." }
                         ].map((v, i) => (
                             <div key={i} className="bg-gray-50 p-10 text-center hover:shadow-lg transition-all group rounded-xl border border-gray-100 hover:border-luxury-pink/30">
                                 <h3 className="text-2xl font-serif text-luxury-charcoal mb-6 group-hover:text-luxury-pink transition-colors">{v.title}</h3>

@@ -14,8 +14,8 @@ const Terms = () => {
                     </section>
 
                     <section>
-                        <h2 className="text-luxury-charcoal font-serif text-2xl mb-4">Wholesale Business</h2>
-                        <p>JS Luxe Aarnam primarily operates as a wholesale jewellery and fashion provider. Prices listed are subject to wholesale terms and minimum order quantities where applicable.</p>
+                        <h2 className="text-luxury-charcoal font-serif text-2xl mb-4"> Business</h2>
+                        <p>JS Luxe Aarnam primarily operates as a  jewellery and fashion provider. Prices listed are subject to  terms and minimum order quantities where applicable.</p>
                     </section>
 
                     <section>

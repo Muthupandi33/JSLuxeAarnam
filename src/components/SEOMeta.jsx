@@ -2,10 +2,10 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 const SEOMeta = ({ title, description, keywords, image, url }) => {
-    const siteTitle = "JS Luxe Aarnam – Wholesale Jewellery & Fashion";
+    const siteTitle = "JS Luxe Aarnam –  Jewellery & Fashion";
     const fullTitle = title ? `${title} | JS Luxe Aarnam` : siteTitle;
-    const defaultDesc = "Premium wholesale jewellery and fashion products from JS Luxe Aarnam. High-quality designs at wholesale prices.";
-    const defaultKeywords = "JS Luxe Aarnam, wholesale jewellery, fashion wholesale, premium jewellery, bridal jewellery";
+    const defaultDesc = "Premium  jewellery and fashion products from JS Luxe Aarnam. High-quality designs at  prices.";
+    const defaultKeywords = "JS Luxe Aarnam,  jewellery, fashion , premium jewellery, bridal jewellery";
     const siteUrl = "https://jsluxeaarnam.com"; // Placeholder
 
     return (

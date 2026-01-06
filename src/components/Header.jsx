@@ -30,7 +30,7 @@ const Header = () => {
         <>
             {/* Announcement Bar */}
             {/* <div className="bg-gradient-to-r from-luxury-pink to-luxury-pink-light text-white text-center py-2 text-xs md:text-sm font-medium tracking-wide">
-                WHOLESALE JEWELLERY & FASHION • TRUSTED BY 1000+ RETAILERS
+                 JEWELLERY & FASHION • TRUSTED BY 1000+ RETAILERS
             </div> */}
 
             <header
@@ -58,7 +58,7 @@ const Header = () => {
                         <div className="w-1/3 flex justify-center">
                             <Link to="/" className="flex flex-col items-center gap-1 group">
                                 <span className="text-2xl md:text-3xl font-bold font-serif text-luxury-charcoal group-hover:text-luxury-pink transition-colors">JS Luxe Aarnam</span>
-                                <span className="text-[10px] tracking-[0.3em] uppercase text-gray-400">Wholesale</span>
+                                <span className="text-[10px] tracking-[0.3em] uppercase text-gray-400"></span>
                             </Link>
                         </div>
 
