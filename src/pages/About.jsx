@@ -3,33 +3,21 @@ import SEOMeta from '../components/SEOMeta';
 import logo from '../assets/LogonameLS.jpeg';
 import { motion } from 'framer-motion';
 
+import PageBanner from '../components/PageBanner';
+import aboutusbanner from '../assets/aboutus.avif';
+
 const About = () => {
     return (
-        <div className="pt-24 min-h-screen bg-luxury-cream page-transition">
+        <div className="min-h-screen bg-luxury-cream page-transition">
             <SEOMeta title="About Us" />
 
             {/* Hero Section */}
-            <section className="py-20 relative overflow-hidden bg-white">
-                <div className="container mx-auto px-4 md:px-6">
-                    <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-                        <motion.h1
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            className="text-5xl md:text-7xl font-serif mb-8 text-luxury-charcoal italic"
-                        >
-                            Our Heritage
-                        </motion.h1>
-                        <motion.p
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.2 }}
-                            className="text-gray-500 text-xl font-light leading-relaxed mb-16"
-                        >
-                            Excellence defined through decades of craftsmanship and a passion for timeless jewellery.
-                        </motion.p>
-                    </div>
-                </div>
-            </section>
+            <PageBanner
+                title="Our Heritage"
+                subtitle="Excellence defined through decades of craftsmanship and a passion for timeless jewellery."
+                image={aboutusbanner}
+                className="h-[88vh]"
+            />
 
             {/* Founder Story */}
             <section className="py-24 bg-luxury-soft">
@@ -91,10 +79,17 @@ const About = () => {
                             { title: "Innovation", desc: "Blending traditional Indian designs with contemporary global trends." },
                             { title: "Commitment", desc: "Dedicated to providing unparalleled service to our  partners." }
                         ].map((v, i) => (
-                            <div key={i} className="bg-gray-50 p-10 text-center hover:shadow-lg transition-all group rounded-xl border border-gray-100 hover:border-luxury-pink/30">
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ delay: i * 0.2 }}
+                                viewport={{ once: true }}
+                                className="bg-gray-50 p-10 text-center hover:shadow-lg transition-all group rounded-xl border border-gray-100 hover:border-luxury-pink/30"
+                            >
                                 <h3 className="text-2xl font-serif text-luxury-charcoal mb-6 group-hover:text-luxury-pink transition-colors">{v.title}</h3>
                                 <p className="text-gray-500 leading-relaxed">{v.desc}</p>
-                            </div>
+                            </motion.div>
                         ))}
                     </div>
                 </div>

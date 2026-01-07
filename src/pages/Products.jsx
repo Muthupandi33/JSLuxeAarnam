@@ -5,6 +5,9 @@ import Loader from '../components/Loader';
 import SEOMeta from '../components/SEOMeta';
 import { Search, Filter, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import productsBanner from '../assets/products.avif';
+
+import PageBanner from '../components/PageBanner';
 
 const Products = () => {
     const { products, loading } = useProducts();
@@ -27,18 +30,25 @@ const Products = () => {
     }, [products, activeCategory, searchQuery]);
 
     return (
-        <div className="pt-24 min-h-screen bg-luxury-cream page-transition">
+        <div className="min-h-screen bg-luxury-cream page-transition">
             <SEOMeta title="Our Collection" />
 
+            <PageBanner
+                title="The Treasury"
+                subtitle="Explore our curated collections of jewellery and fashion accessories."
+                image={productsBanner}
+                className="h-[88vh]"
+            />
+
             <div className="container mx-auto px-4 md:px-6 py-12">
-                {/* Header Section */}
-                <div className="text-center mb-16">
-                    <h1 className="text-4xl md:text-6xl font-serif mb-4 text-luxury-charcoal italic">The Treasury</h1>
-                    <p className="text-gray-500 max-w-xl mx-auto">Explore our curated collections of  jewellery and fashion accessories.</p>
-                </div>
 
                 {/* Controls */}
-                <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                    className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12"
+                >
                     {/* Search Bar */}
                     <div className="relative w-full md:w-96">
                         <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
@@ -75,7 +85,7 @@ const Products = () => {
                             </button>
                         ))}
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Mobile Filter Sheet */}
                 <AnimatePresence>

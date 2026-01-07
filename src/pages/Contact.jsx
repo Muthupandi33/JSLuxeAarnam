@@ -2,22 +2,33 @@ import React from 'react';
 import SEOMeta from '../components/SEOMeta';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { motion } from 'framer-motion';
+import contactbanner from '../assets/contact.avif';
+
+import PageBanner from '../components/PageBanner';
 
 const Contact = () => {
     return (
-        <div className="pt-24 min-h-screen bg-luxury-cream page-transition">
+        <div className="min-h-screen bg-luxury-cream page-transition">
             <SEOMeta title="Contact Us" />
 
+            <PageBanner
+                title="Get In Touch"
+                subtitle="Have a query or looking for partnerships? Reach out to us directly or fill the form."
+                image={contactbanner}
+                className="h-[88vh]"
+            />
+
             <div className="container mx-auto px-4 md:px-6 py-16">
-                <div className="text-center mb-20 max-w-2xl mx-auto">
-                    <h1 className="text-5xl md:text-6xl font-serif mb-6 text-luxury-charcoal">Get In Touch</h1>
-                    <p className="text-gray-500 text-lg">Have a query or looking for  partnerships? Reach out to us directly or fill the form.</p>
-                </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
                     {/* Contact Details */}
-                    <div className="lg:col-span-1 space-y-8">
-                        <div className="bg-white p-8 flex items-start gap-6 border-l-4 border-luxury-pink shadow-md rounded-r-xl">
+                    <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        className="lg:col-span-1 space-y-8"
+                    >
+                        <div className="bg-white p-8 flex items-start gap-6 border-l-4 border-luxury-pink shadow-md rounded-r-xl transform hover:scale-105 transition-transform duration-300">
                             <div className="p-3 bg-luxury-pink/10 rounded-xl text-luxury-pink"><Phone size={24} /></div>
                             <div>
                                 <h4 className="text-luxury-charcoal font-serif text-lg mb-1">WhatsApp & Call</h4>
@@ -26,7 +37,7 @@ const Contact = () => {
                             </div>
                         </div>
 
-                        <div className="bg-white p-8 flex items-start gap-6 border-l-4 border-luxury-pink shadow-md rounded-r-xl">
+                        <div className="bg-white p-8 flex items-start gap-6 border-l-4 border-luxury-pink shadow-md rounded-r-xl transform hover:scale-105 transition-transform duration-300">
                             <div className="p-3 bg-luxury-pink rounded-xl text-white shadow-lg shadow-luxury-pink/30"><Mail size={24} /></div>
                             <div className="min-w-0"> {/* min-w-0 required for flex child truncation/wrap */}
                                 <h4 className="text-luxury-charcoal font-serif text-lg mb-1">Email</h4>
@@ -35,14 +46,14 @@ const Contact = () => {
                             </div>
                         </div>
 
-                        <div className="bg-white p-8 flex items-start gap-6 border-l-4 border-luxury-pink shadow-md rounded-r-xl">
+                        <div className="bg-white p-8 flex items-start gap-6 border-l-4 border-luxury-pink shadow-md rounded-r-xl transform hover:scale-105 transition-transform duration-300">
                             <div className="p-3 bg-luxury-pink/10 rounded-xl text-luxury-pink"><MapPin size={24} /></div>
                             <div>
                                 <h4 className="text-luxury-charcoal font-serif text-lg mb-1">Headquarters</h4>
                                 <p className="text-gray-500 font-light">G. Seethalakshmi,<br />JS Luxe Aarnam, Tamil Nadu, India</p>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* Contact Form */}
                     <div className="lg:col-span-2">

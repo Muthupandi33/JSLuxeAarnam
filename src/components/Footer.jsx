@@ -8,7 +8,7 @@ const Footer = () => {
 
     const socialLinks = [
         { icon: <Instagram size={20} />, url: 'https://instagram.com/js_luxe_aarnam', label: 'Instagram' },
-        { icon: <Youtube size={20} />, url: 'https://youtube.com/@js_luxe_aarnam', label: 'YouTube' },
+        { icon: <Youtube size={20} />, url: 'https://youtube.com/@jsluxeaarnam?si=D228jTADhUNEDC_T', label: 'YouTube' },
         { icon: <Facebook size={20} />, url: 'https://facebook.com/js_luxe_aarnam', label: 'Facebook' },
     ];
 

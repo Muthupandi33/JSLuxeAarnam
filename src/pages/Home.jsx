@@ -7,6 +7,7 @@ import SEOMeta from '../components/SEOMeta';
 import { ArrowRight, Star, ShieldCheck, Truck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import img from '../assets/JewelleryLogo.jpg';
+import banner from '../assets/home.avif';
 
 const Home = () => {
     const { products, loading } = useProducts();
@@ -23,10 +24,10 @@ const Home = () => {
             <SEOMeta title="Home" />
 
             {/* Hero Section */}
-            <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-luxury-cream">
+            <section className="relative h-[88vh] flex items-center justify-center overflow-hidden bg-luxury-cream">
                 <div className="absolute inset-0 z-0 opacity-40">
                     <img
-                        src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&q=80&w=2000"
+                        src={banner}
                         alt="Hero Background"
                         className="w-full h-full object-cover"
                     />
@@ -119,54 +120,83 @@ const Home = () => {
 
             {/* About Teaser */}
             <section className="py-24 bg-white overflow-hidden">
-                <div className="container mx-auto px-4 md:px-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-16">
+                <div className="container mx-auto px-4 md:px-6 relative z-10">
+                    <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-16 md:gap-24">
                         <motion.div
                             initial={{ x: -50, opacity: 0 }}
                             whileInView={{ x: 0, opacity: 1 }}
                             viewport={{ once: true }}
-                            className="relative"
+                            transition={{ duration: 0.8, ease: "easeOut" }}
+                            className="relative group"
                         >
-                            <div className="absolute -top-10 -left-10 w-40 h-40 border-l-2 border-t-2 border-luxury-pink/20"></div>
-                            <img
-                                src={img}
-                                alt="Jewellery Craft - JS Luxe Aarnam"
-                                className="rounded-2xl shadow-2xl w-full object-cover"
-                            />
-
-                            <div className="absolute -bottom-10 -right-10 w-40 h-40 border-r-2 border-b-2 border-luxury-pink/20"></div>
+                            <div className="absolute -top-6 -left-6 w-32 h-32 border-l-2 border-t-2 border-luxury-pink/40 transition-all duration-700 group-hover:w-full group-hover:h-full"></div>
+                            <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+                                <img
+                                    src={img}
+                                    alt="Jewellery Craft - JS Luxe Aarnam"
+                                    className="w-full h-[500px] object-cover transform transition-transform duration-1000 group-hover:scale-105"
+                                />
+                                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
+                            </div>
+                            <div className="absolute -bottom-6 -right-6 w-32 h-32 border-r-2 border-b-2 border-luxury-pink/40 transition-all duration-700 group-hover:w-full group-hover:h-full"></div>
                         </motion.div>
 
                         <motion.div
                             initial={{ x: 50, opacity: 0 }}
                             whileInView={{ x: 0, opacity: 1 }}
                             viewport={{ once: true }}
+                            transition={{ duration: 0.8, ease: "easeOut" }}
                         >
-                            <h4 className="text-luxury-pink tracking-[0.2em] uppercase text-xs mb-3 font-bold">Our Vision</h4>
-                            <h2 className="text-4xl font-serif text-luxury-charcoal mb-8">Crafting Memories for Generations</h2>
-                            <p className="text-gray-500 mb-8 text-lg font-light leading-relaxed">
-                                Founded by G. Seethalakshmi, JS Luxe Aarnam started with a simple vision: to bring curated, high-quality jewellery to businesses and lovers of fashion at  prices.
-                            </p>
-                            <ul className="space-y-4 mb-10">
-                                <li className="flex items-center gap-3 text-luxury-charcoal">
-                                    <div className="w-1.5 h-1.5 bg-luxury-pink rounded-full"></div>
-                                    <span>Exclusive Indian Ethnic Designs</span>
-                                </li>
-                                <li className="flex items-center gap-3 text-luxury-charcoal">
-                                    <div className="w-1.5 h-1.5 bg-luxury-pink rounded-full"></div>
-                                    <span>Quality Assured </span>
-                                </li>
-                                <li className="flex items-center gap-3 text-luxury-charcoal">
-                                    <div className="w-1.5 h-1.5 bg-luxury-pink rounded-full"></div>
-                                    <span>Personalized Service Experience</span>
-                                </li>
-                            </ul>
-                            <Link
-                                to="/about"
-                                className="inline-block border-b-2 border-luxury-pink pb-1 text-luxury-pink hover:text-luxury-charcoal hover:border-luxury-charcoal transition-all uppercase tracking-widest text-sm font-bold"
+                            <motion.h4
+                                initial={{ opacity: 0, y: 10 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.2 }}
+                                className="text-luxury-pink tracking-[0.3em] uppercase text-xs mb-4 font-bold flex items-center gap-2"
                             >
-                                Learn More About Us
-                            </Link>
+                                <span className="w-8 h-[1px] bg-luxury-pink"></span> Our Vision
+                            </motion.h4>
+                            <h2 className="text-4xl md:text-5xl font-serif text-luxury-charcoal mb-8 leading-tight">
+                                Crafting Memories <br /><span className="italic text-luxury-gold">for Generations</span>
+                            </h2>
+                            <p className="text-gray-600 mb-8 text-lg font-light leading-relaxed">
+                                Founded by G. Seethalakshmi, JS Luxe Aarnam started with a simple vision: to bring curated, high-quality jewellery to businesses and lovers of fashion at accessible prices.
+                            </p>
+
+                            <ul className="space-y-5 mb-10">
+                                {[
+                                    "Exclusive Indian Ethnic Designs",
+                                    "Quality Assured Craftsmanship",
+                                    "Personalized Service Experience"
+                                ].map((item, index) => (
+                                    <motion.li
+                                        key={index}
+                                        initial={{ opacity: 0, x: 20 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: 0.4 + (index * 0.1) }}
+                                        className="flex items-center gap-4 text-luxury-charcoal group"
+                                    >
+                                        <span className="w-8 h-8 rounded-full bg-luxury-pink/10 flex items-center justify-center text-luxury-pink group-hover:bg-luxury-pink group-hover:text-white transition-colors">
+                                            <Star size={14} fill="currentColor" />
+                                        </span>
+                                        <span className="text-lg font-light">{item}</span>
+                                    </motion.li>
+                                ))}
+                            </ul>
+
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.7 }}
+                            >
+                                <Link
+                                    to="/about"
+                                    className="inline-flex items-center gap-2 border-b-2 border-luxury-pink pb-1 text-luxury-pink hover:text-luxury-charcoal hover:border-luxury-charcoal transition-all uppercase tracking-widest text-sm font-bold group"
+                                >
+                                    Learn More About Us
+                                    <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
+                                </Link>
+                            </motion.div>
                         </motion.div>
                     </div>
                 </div>

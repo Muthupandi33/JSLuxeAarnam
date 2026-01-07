@@ -34,6 +34,7 @@ Is this available?`
                         alt={name}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         loading="lazy"
+                        referrerPolicy="no-referrer"
                     />
                 </Link>
 

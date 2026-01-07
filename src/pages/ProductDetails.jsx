@@ -1,17 +1,20 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useProducts } from '../context/ProductContext';
 import Loader from '../components/Loader';
 import SEOMeta from '../components/SEOMeta';
+import DeliveryModal from '../components/DeliveryModal';
 import { ShoppingBag, ArrowLeft, Truck, ShieldCheck, RefreshCcw } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const ProductDetails = () => {
     const { id } = useParams();
     const { products, loading } = useProducts();
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const product = useMemo(() => {
-        return products.find(p => p.id === id);
+        // Handle potentially different ID types (string vs number)
+        return products.find(p => String(p.id) === String(id));
     }, [products, id]);
 
     if (loading) return <div className="pt-32"><Loader /></div>;
@@ -27,19 +30,8 @@ const ProductDetails = () => {
         );
     }
 
-    const whatsappLink = `https://wa.me/+916383812040?text=${encodeURIComponent(
-        `Hi JS Luxe Aarnam, I'm interested in ordering:
-    
-*Product:* ${product.name}
-*ID:* ${product.id}
-*Price:* ₹${product.discountPrice}
-*Description:* ${product.description}
-
-Is this available for  purchase?`
-    )}`;
-
     return (
-        <div className="pt-24 min-h-screen bg-luxury-cream page-transition">
+        <div className="pt-20 min-h-screen bg-luxury-cream page-transition">
             <SEOMeta
                 title={product.name}
                 description={product.description}
@@ -64,6 +56,7 @@ Is this available for  purchase?`
                                 src={product.imageUrl}
                                 alt={product.name}
                                 className="w-full h-full object-cover"
+                                referrerPolicy="no-referrer"
                             />
                         </div>
                     </motion.div>
@@ -96,15 +89,15 @@ Is this available for  purchase?`
                             {product.description}
                         </p>
 
-                        <a
-                            href={whatsappLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="bg-luxury-pink hover:bg-luxury-pink/90 text-white font-bold py-5 px-10 rounded-2xl flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transition-all transform active:scale-95 mb-10"
+                        <button
+                            onClick={() => setIsModalOpen(true)}
+                            className={`${(product.stockStatus?.toLowerCase() === 'no stock' || product.stockStatus?.toLowerCase() === 'out of stock') ? 'bg-gray-400 hover:bg-gray-500' : 'bg-luxury-pink hover:bg-luxury-pink/90'} text-white font-bold py-5 px-10 rounded-2xl flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transition-all transform active:scale-95 mb-10`}
                         >
                             <ShoppingBag size={24} />
-                            <span className="text-lg">Order on WhatsApp</span>
-                        </a>
+                            <span className="text-lg">
+                                {(product.stockStatus?.toLowerCase() === 'no stock' || product.stockStatus?.toLowerCase() === 'out of stock') ? 'Send Requirement' : 'Buy Now'}
+                            </span>
+                        </button>
 
                         {/* Trust Badges */}
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-10 border-t border-gray-200">
@@ -127,6 +120,12 @@ Is this available for  purchase?`
                     </motion.div>
                 </div>
             </div>
+
+            <DeliveryModal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                product={product}
+            />
         </div>
     );
 };

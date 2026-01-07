@@ -39,7 +39,7 @@ const Header = () => {
             >
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="flex items-center justify-between">
-                        {/* Mobile Toggle & Search Placeholder (Left) */}
+                        {/* Mobile Toggle & Search Placeholder & Logo (Left) */}
                         <div className="flex items-center gap-4 w-1/3">
                             <button
                                 className="lg:hidden text-luxury-charcoal hover:text-luxury-pink transition-colors"
@@ -47,6 +47,9 @@ const Header = () => {
                             >
                                 {isOpen ? <X size={24} /> : <Menu size={24} />}
                             </button>
+                            <Link to="/">
+                                <img src={logo} alt="JS Luxe Aarnam" className="h-12 w-auto object-contain" />
+                            </Link>
                             <div className="hidden lg:block">
                                 <Link to="/products" className="text-gray-400 hover:text-luxury-pink transition-colors">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
@@ -54,11 +57,10 @@ const Header = () => {
                             </div>
                         </div>
 
-                        {/* Logo (Center) */}
+                        {/* Brand Name (Center) */}
                         <div className="w-1/3 flex justify-center">
                             <Link to="/" className="flex flex-col items-center gap-1 group">
-                                <span className="text-2xl md:text-3xl font-bold font-serif text-luxury-charcoal group-hover:text-luxury-pink transition-colors">JS Luxe Aarnam</span>
-                                <span className="text-[10px] tracking-[0.3em] uppercase text-gray-400"></span>
+                                <span className="text-xl md:text-3xl font-bold font-serif text-luxury-charcoal group-hover:text-luxury-pink transition-colors text-center leading-tight">JS Luxe Aarnam</span>
                             </Link>
                         </div>
 

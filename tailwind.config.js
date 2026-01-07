@@ -8,7 +8,7 @@ export default {
         extend: {
             colors: {
                 luxury: {
-                    pink: "#D48D92", // Rose Gold/Pink accent
+                    pink: "#E1306C", // Vibrant Pink (Instagram brand color-like)
                     "pink-light": "#E8B4B8",
                     charcoal: "#1A1A1A", // Primary text
                     cream: "#F9F9F9", // Main background
