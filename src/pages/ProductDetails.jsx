@@ -92,7 +92,7 @@ const ProductDetails = () => {
                         <button
                             onClick={() => setIsModalOpen(true)}
                             className={`${(product.stockStatus?.toLowerCase() === 'no stock' || product.stockStatus?.toLowerCase() === 'out of stock') ? 'bg-gray-400 hover:bg-gray-500' : 'bg-luxury-pink hover:bg-luxury-pink/90'} text-white font-bold py-5 px-10 rounded-2xl flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transition-all transform active:scale-95 mb-10`}
-                        >
+                        > 
                             <ShoppingBag size={24} />
                             <span className="text-lg">
                                 {(product.stockStatus?.toLowerCase() === 'no stock' || product.stockStatus?.toLowerCase() === 'out of stock') ? 'Send Requirement' : 'Buy Now'}
