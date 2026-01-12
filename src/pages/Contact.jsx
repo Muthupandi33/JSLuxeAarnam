@@ -7,6 +7,51 @@ import contactbanner from '../assets/contact.avif';
 import PageBanner from '../components/PageBanner';
 
 const Contact = () => {
+    const [formData, setFormData] = React.useState({
+        fullName: '',
+        email: '',
+        subject: '',
+        message: ''
+    });
+    const [status, setStatus] = React.useState('idle'); // idle, submitting, success, error
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.type === 'textarea' ? 'message' : e.target.placeholder.toLowerCase().includes('name') ? 'fullName' : e.target.type === 'email' ? 'email' : 'subject']: e.target.value });
+    };
+
+    // More robust input handling by adding name attributes to inputs
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setStatus('submitting');
+
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwArw7ehccOZcnc8jL1j--EU7WYk809j4XRmT_sXT3llZc1UH5hX-6BzBCALC7RSeGVCw/exec";
+
+        try {
+            await fetch(SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            });
+
+            // Since no-cors doesn't return JSON, we assume success if no network error
+            setStatus('success');
+            setFormData({ fullName: '', email: '', subject: '', message: '' });
+            setTimeout(() => setStatus('idle'), 5000); // Reset status after 5 seconds
+        } catch (error) {
+            console.error("Submission error:", error);
+            setStatus('error');
+            setTimeout(() => setStatus('idle'), 5000);
+        }
+    };
+
     return (
         <div className="min-h-screen bg-luxury-cream page-transition">
             <SEOMeta title="Contact Us" />
@@ -65,27 +110,76 @@ const Contact = () => {
                         >
                             <div className="absolute top-0 right-0 w-64 h-64 bg-luxury-pink/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
 
-                            <form className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <form onSubmit={handleSubmit} className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8">
                                 <div className="space-y-2">
                                     <label className="text-xs uppercase tracking-widest text-gray-400 font-bold">Full Name</label>
-                                    <input type="text" placeholder="John Doe" className="w-full bg-gray-50 border border-gray-200 rounded-xl py-4 px-6 text-luxury-charcoal focus:outline-none focus:border-luxury-pink transition-all" />
+                                    <input
+                                        type="text"
+                                        name="fullName"
+                                        value={formData.fullName}
+                                        onChange={handleInputChange}
+                                        placeholder="John Doe"
+                                        className="w-full bg-gray-50 border border-gray-200 rounded-xl py-4 px-6 text-luxury-charcoal focus:outline-none focus:border-luxury-pink transition-all"
+                                        required
+                                    />
                                 </div>
                                 <div className="space-y-2">
                                     <label className="text-xs uppercase tracking-widest text-gray-400 font-bold">Email Address</label>
-                                    <input type="email" placeholder="john@example.com" className="w-full bg-gray-50 border border-gray-200 rounded-xl py-4 px-6 text-luxury-charcoal focus:outline-none focus:border-luxury-pink transition-all" />
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        value={formData.email}
+                                        onChange={handleInputChange}
+                                        placeholder="john@example.com"
+                                        className="w-full bg-gray-50 border border-gray-200 rounded-xl py-4 px-6 text-luxury-charcoal focus:outline-none focus:border-luxury-pink transition-all"
+                                        required
+                                    />
                                 </div>
                                 <div className="space-y-2 md:col-span-2">
                                     <label className="text-xs uppercase tracking-widest text-gray-400 font-bold">Subject</label>
-                                    <input type="text" placeholder=" Inquiry" className="w-full bg-gray-50 border border-gray-200 rounded-xl py-4 px-6 text-luxury-charcoal focus:outline-none focus:border-luxury-pink transition-all" />
+                                    <input
+                                        type="text"
+                                        name="subject"
+                                        value={formData.subject}
+                                        onChange={handleInputChange}
+                                        placeholder=" Inquiry"
+                                        className="w-full bg-gray-50 border border-gray-200 rounded-xl py-4 px-6 text-luxury-charcoal focus:outline-none focus:border-luxury-pink transition-all"
+                                        required
+                                    />
                                 </div>
                                 <div className="space-y-2 md:col-span-2">
                                     <label className="text-xs uppercase tracking-widest text-gray-400 font-bold">Your Message</label>
-                                    <textarea rows="6" placeholder="How can we help you today?" className="w-full bg-gray-50 border border-gray-200 rounded-xl py-4 px-6 text-luxury-charcoal focus:outline-none focus:border-luxury-pink transition-all resize-none"></textarea>
+                                    <textarea
+                                        rows="6"
+                                        name="message"
+                                        value={formData.message}
+                                        onChange={handleInputChange}
+                                        placeholder="How can we help you today?"
+                                        className="w-full bg-gray-50 border border-gray-200 rounded-xl py-4 px-6 text-luxury-charcoal focus:outline-none focus:border-luxury-pink transition-all resize-none"
+                                        required
+                                    ></textarea>
                                 </div>
+
+                                {status === 'success' && (
+                                    <div className="md:col-span-2 p-4 bg-green-50 text-green-700 rounded-xl border border-green-200">
+                                        Thank you! Your message has been sent successfully.
+                                    </div>
+                                )}
+
+                                {status === 'error' && (
+                                    <div className="md:col-span-2 p-4 bg-red-50 text-red-700 rounded-xl border border-red-200">
+                                        Something went wrong. Please try again later.
+                                    </div>
+                                )}
+
                                 <div className="md:col-span-2">
-                                    <button type="submit" className="w-full bg-luxury-pink text-white font-bold py-5 rounded-xl flex items-center justify-center gap-3 hover:shadow-lg hover:bg-luxury-pink-light transition-all transform active:scale-[0.98]">
-                                        <Send size={20} />
-                                        <span>Send Inquiry</span>
+                                    <button
+                                        type="submit"
+                                        disabled={status === 'submitting'}
+                                        className="w-full bg-luxury-pink text-white font-bold py-5 rounded-xl flex items-center justify-center gap-3 hover:shadow-lg hover:bg-luxury-pink-light transition-all transform active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed"
+                                    >
+                                        <Send size={20} className={status === 'submitting' ? 'animate-pulse' : ''} />
+                                        <span>{status === 'submitting' ? 'Sending...' : 'Send Inquiry'}</span>
                                     </button>
                                 </div>
                             </form>
