@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: jsluxe-app
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: jsluxe-app
+
+  template:
+    metadata:
+      labels:
+        app: jsluxe-app
+
+    spec:
+      containers:
+        - name: jsluxe-container
+          image: jsluxe-app:v1
+          imagePullPolicy: Never
+
+          ports:
+            - containerPort: 80
