@@ -95,7 +95,7 @@ const Contact = () => {
                             <div className="p-3 bg-luxury-pink/10 rounded-xl text-luxury-pink"><MapPin size={24} /></div>
                             <div>
                                 <h4 className="text-luxury-charcoal font-serif text-lg mb-1">Headquarters</h4>
-                                <p className="text-gray-500 font-light">G. Seethalakshmi,<br />JS Luxe Aarnam, Tamil Nadu, India</p>
+                                <p className="text-gray-500 font-light">G. Seethalakshmi,<br />JS Luxe Aarnam, Coimbatore, Tamil Nadu, India</p>
                             </div>
                         </div>
                     </motion.div>
