@@ -77,7 +77,7 @@ const Contact = () => {
                             <div className="p-3 bg-luxury-pink/10 rounded-xl text-luxury-pink"><Phone size={24} /></div>
                             <div>
                                 <h4 className="text-luxury-charcoal font-serif text-lg mb-1">WhatsApp & Call</h4>
-                                <p className="text-gray-500 font-light">+91 8531976451</p>
+                                <p className="text-gray-500 font-light">+91 63838 12040</p>
                                 <a href="https://wa.me/916383812040" className="text-luxury-pink text-xs uppercase tracking-widest font-bold mt-2 inline-block">Message Now</a>
                             </div>
                         </div>
