@@ -1,5 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
+
 metadata:
   name: jsluxe-app
   labels:
@@ -22,6 +23,5 @@ spec:
         - name: jsluxe-app
           image: muthuphy33/jsluxe-app:latest
           imagePullPolicy: Always
-
           ports:
             - containerPort: 80
