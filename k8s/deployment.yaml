@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: jsluxe-app
-          image: muthuphy33/jsluxe-app:latest   # ← will be replaced automatically
+          image: muthuphy33/jsluxe-app:d4ee18d2290c0d96f928835c8b9a9d6d6f658088
           imagePullPolicy: Always
           ports:
             - containerPort: 80
