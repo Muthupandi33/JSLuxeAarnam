@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: jsluxe-app
-          image: muthuphy33/jsluxe-app:e148762740a72dda9f73e29efeb9877e2a501342
+          image: muthuphy33/jsluxe-app:e56b73bbd4986f7c42ea0b7cc2f02f69427c64d1
           imagePullPolicy: Always
           ports:
             - containerPort: 80
