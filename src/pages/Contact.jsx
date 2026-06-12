@@ -86,7 +86,7 @@ const Contact = () => {
                             <div className="p-3 bg-luxury-pink rounded-xl text-white shadow-lg shadow-luxury-pink/30"><Mail size={24} /></div>
                             <div className="min-w-0"> {/* min-w-0 required for flex child truncation/wrap */}
                                 <h4 className="text-luxury-charcoal font-serif text-lg mb-1">Email</h4>
-                                <p className="text-gray-500 font-light break-all">jsluxeaarnam@gmail.com</p>
+                                <p className="text-gray-500 font-light break-all">muthuphy@gmail.com</p>
                                 <a href="mailto:jsluxeaarnam@gmail.com" className="text-luxury-pink text-xs uppercase tracking-widest font-bold mt-2 inline-block hover:underline">Send Email</a>
                             </div>
                         </div>
