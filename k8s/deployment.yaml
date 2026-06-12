@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: jsluxe-container
-          image: DOCKER_USERNAME/jsluxe-app:latest
+          image: ${{ secrets.DOCKER_USERNAME }}/jsluxe-app:latest
           imagePullPolicy: Always
 
           ports:
