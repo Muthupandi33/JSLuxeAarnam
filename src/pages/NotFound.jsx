@@ -17,7 +17,7 @@ const NotFound = () => {
                 transition={{ duration: 0.5 }}
                 className="relative z-10"
             >
-                <h1 className="text-[150px] md:text-[200px] font-serif text-luxury-pink/20 leading-none mb-4">404</h1>
+                <h1 className="text-[150px] md:text-[200px] font-serif text-luxury-pink/20 leading-none mb-4">333</h1>
                 <h2 className="text-2xl md:text-3xl font-serif text-luxury-charcoal mb-8 tracking-widest uppercase">Elegance is lost...</h2>
                 <p className="text-gray-500 max-w-md mx-auto mb-12 text-lg font-light">
                     The page you are looking for has been moved or doesn't exist in our current collection.
