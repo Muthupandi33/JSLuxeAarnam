@@ -1,27 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
-
 metadata:
   name: jsluxe-app
   labels:
     app: jsluxe-app
-
 spec:
   replicas: 1
-
   selector:
     matchLabels:
       app: jsluxe-app
-
   template:
     metadata:
       labels:
         app: jsluxe-app
-
     spec:
       containers:
         - name: jsluxe-app
-          image: muthuphy33/jsluxe-app:latest
+          image: muthuphy33/jsluxe-app:latest   # ← will be replaced automatically
           imagePullPolicy: Always
           ports:
             - containerPort: 80
