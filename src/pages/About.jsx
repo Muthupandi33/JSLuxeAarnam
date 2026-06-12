@@ -43,7 +43,7 @@ const About = () => {
                             viewport={{ once: true }}
                         >
                             <span className="text-luxury-pink tracking-[0.3em] uppercase text-xs font-bold mb-4 block">The Visionary</span>
-                            <h2 className="text-4xl font-serif text-luxury-charcoal mb-8">G. Lakshmi</h2>
+                            <h2 className="text-4xl font-serif text-luxury-charcoal mb-8">G. Seetha Lakshmi</h2>
                             <p className="text-gray-500 mb-6 leading-relaxed text-lg">
                                 JS Luxe Aarnam was founded on the principle that luxury should be accessible and eternal. Under the leadership of G. Seethalakshmi, we have grown from a boutique vision into a  hub that serves clients across regions.
                             </p>
