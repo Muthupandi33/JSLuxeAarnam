@@ -25,4 +25,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: muthuphy33/jsluxe-app:latest
+          tags: muthuphy33/jsluxe-app:latest 
